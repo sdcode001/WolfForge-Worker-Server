@@ -5,6 +5,9 @@ const { fileManager } = require('./file-manager-service');
 const { error } = require('console');
 
 function initHttp(app){
+    app.get('/check', async(req, res) => {
+        return res.status(200).json({message: "Hi Souvik. I'm up..."});
+    })
 
     app.post('/create-file-folder', async(req, res) => {
         //req.body: {username:string, projectId:string, path:string, type:string, name:string}
